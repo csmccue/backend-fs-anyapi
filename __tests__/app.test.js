@@ -15,7 +15,7 @@ describe('backend-express-template routes', () => {
   it('/boats should return a list of boats with stats', async () => {
     const res = await request(app).get('/boats');
     const expected = boats.map((boat) => {
-      return { id: boat.id, name: boat.name };
+      return { id: boat.id, name: boat.name, type: boat.type };
     });
     expect(res.body).toEqual(expected);
   });
