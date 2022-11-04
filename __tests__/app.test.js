@@ -20,6 +20,14 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  // it('/boats/type should return a list of boats of that type', async () => {
+  //   const res = await request(app).get('boats/Carrier');
+  //   const carrier = {
+  //     name: 'USS Yorktown',
+  //     type: 'Carrier'
+  //   };
+  //   expect(res.body).toEqual(carrier);
+  // });
 
 
 

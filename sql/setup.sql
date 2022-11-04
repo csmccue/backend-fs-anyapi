@@ -11,4 +11,6 @@ CREATE TABLE boats (
 INSERT INTO boats (name, type)
 VALUES
 ('USS Atlanta', 'Light Cruiser'),
-('USS Indianapolis', 'Heavy Cruiser');
+('USS Indianapolis', 'Heavy Cruiser'),
+('USS Yorktown', 'Carrier'),
+('USS Iowa', 'Battleship');
