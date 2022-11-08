@@ -41,12 +41,22 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(boat);
   });
 
-  it('/countries should return a list of countries with stats', async () => {
+  it.skip('/countries should return a list of countries with stats', async () => {
     const res = await request(app).get('/countries');
     const expected = countries.map((place) => {
       return { id: place.id, name: place.name, size: place.size };
     });
     expect(res.body).toEqual(expected);
+  });
+
+  it('/countries/id should return country with matching id', async () => {
+    const res = await request(app).get('/countries/1');
+    const place = {
+      id: '1',
+      name: 'United States',
+      size: '300 million',
+    };
+    expect(res.body).toEqual(place);
   });
 
 
