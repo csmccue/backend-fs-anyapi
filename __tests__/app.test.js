@@ -41,10 +41,10 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(boat);
   });
 
-  it('/countries should return a list of countries', async () => {
+  it('/countries should return a list of countries with stats', async () => {
     const res = await request(app).get('/countries');
     const expected = countries.map((place) => {
-      return { id: place.id, name: place.name, size: place.size};
+      return { id: place.id, name: place.name, size: place.size };
     });
     expect(res.body).toEqual(expected);
   });

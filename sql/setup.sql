@@ -28,4 +28,4 @@ VALUES
 ('United States', '300 million'),
 ('Canada', '38 million'),
 ('Mexico', '130 million'),
-('Guatemala ', '17 million');
+('Guatemala', '17 million');
