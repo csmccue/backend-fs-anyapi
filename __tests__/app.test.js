@@ -3,6 +3,7 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const { boats } = require('../lib/utils/boats-data');
+const { countries } = require('../lib/utils/countries-data');
 
 
 describe('backend-express-template routes', () => {
@@ -43,7 +44,7 @@ describe('backend-express-template routes', () => {
   it('/countries should return a list of countries', async () => {
     const res = await request(app).get('/countries');
     const expected = countries.map((place) => {
-      return { id: countries.id, name: countries.name, size: countries.size};
+      return { id: place.id, name: place.name, size: place.size};
     });
     expect(res.body).toEqual(expected);
   });
