@@ -14,3 +14,18 @@ VALUES
 ('USS Indianapolis', 'Heavy Cruiser'),
 ('USS Yorktown', 'Carrier'),
 ('USS Iowa', 'Battleship');
+
+DROP TABLE IF EXISTS countries;
+
+CREATE TABLE countries (
+  id BIGINT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR NOT NULL,
+  size VARCHAR NOT NULL
+);
+
+INSERT INTO countries (name, size)
+VALUES
+('United States', '300 million'),
+('Canada', '38 million'),
+('Mexico', '130 million'),
+('Guatemala ', '17 million');
