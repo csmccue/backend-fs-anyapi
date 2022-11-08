@@ -21,7 +21,7 @@ describe('backend-express-template routes', () => {
   });
 
   it.skip('/boats/type should return a list of boats of that type', async () => {
-    const res = await request(app).get('boats/Carrier');
+    const res = await request(app).get('/boats/Carrier');
     const carrier = {
       name: 'USS Yorktown',
       type: 'Carrier'
@@ -30,10 +30,11 @@ describe('backend-express-template routes', () => {
   });
 
   it('/boats/id should return a boat with that id', async () => {
-    const res = await request(app).get('boats/1');
+    const res = await request(app).get('/boats/1');
     const carrier = {
-      name: 'USS Yorktown',
-      type: 'Carrier'
+      id: '1',
+      name: 'USS Atlanta',
+      type: 'Light Cruiser',
     };
     expect(res.body).toEqual(carrier);
   });
