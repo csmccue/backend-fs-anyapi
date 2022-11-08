@@ -30,7 +30,7 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(boat);
   });
 
-  it('/boats/type should return a list of boats of that type', async () => {
+  it.skip('/boats/type should return a list of boats of that type', async () => {
     const res = await request(app).get('/boats/type/Carrier');
     const boat = {
       id: '3',
@@ -38,6 +38,14 @@ describe('backend-express-template routes', () => {
       type: 'Carrier'
     };
     expect(res.body).toEqual(boat);
+  });
+
+  it('/countries should return a list of countries', async () => {
+    const res = await request(app).get('/countries');
+    const expected = countries.map((place) => {
+      return { id: countries.id, name: countries.name, size: countries.size};
+    });
+    expect(res.body).toEqual(expected);
   });
 
 
